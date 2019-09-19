@@ -8,8 +8,8 @@
 
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="../../css/reset.css">
-<link rel="stylesheet" href="../../css/survey.css">
+<link rel="stylesheet" href="/public/css/reset.css">
+<link rel="stylesheet" href="/public/css/survey.css">
 </head>
 <body>
 <h1>Survey Questions</h1>
@@ -22,7 +22,7 @@
             <label for="user-name"><h6>Name</h6></label>
             <input type="text" class="form-control" id="user-name" placeholder="Perseus">
             <label for="user-name"><h6>Link to photo image</h6></label>
-            <input type="text" class="form-control" id="user-name" placeholder="preferably your face will be visible">
+            <input type="text" class="form-control" id="user-photo" placeholder="preferably your face will be visible">
         </div>
         <p>Please provide your answers on a scale of One to Five, One being the one you strongly disagree and 5 you strongly agree</p>
         <div class="form-group">
@@ -137,6 +137,8 @@
             </select>
         </div>
 
+        <button type="submit" class="btn btn-primary submit">Submit</button>
+
     </form>
     
 <!-- Optional JavaScript -->
@@ -144,5 +146,63 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<footer class="footer">
+    <div class="container">
+        <a href="/home">HOME</a>
+    </div>
+</footer>
+
 </body>
 </html>
+
+<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS SENT TO OUR SERVER -->
+<!-- on submit jQuery will capture the user's answers and make a POST request to the api -->
+<!-- I think the route is /api/apiRoutes, this will make the code found in that file run -->
+
+<!-- $post is where the magic happens, similar to the ajax call used in the past, the object to be sent is passed and a callback is made -->
+<script type="test/javascript">
+
+    $(".submit").on("click", function(event) {
+        event.preventDefault();
+
+        var participant={
+            userName: $('#user-name').val(),
+            userPhoto: $('#user-photo').val();
+            answers:[
+            $('#answer1').val(),
+            $('#answer2').val(),
+            $('#answer3').val(),
+            $('#answer4').val(),
+            $('#answer5').val(),
+            $('#answer6').val(),
+            $('#answer7').val(),
+            $('#answer8').val(),
+            $('#answer9').val(),
+            $('#answer10').val()
+            ]
+        };
+        console.log('survey.html user is : ' + participant);
+
+        $.post('/api/apiRoutes', participant, function(data){
+            if (data){
+                alert('We are looking for a match!');
+            }else{
+                alert('Hmm . . . Tricky customer!');
+            };
+            $('#user-name').val('');
+            $('#user-photo').val('');
+            $('#answer1').val('');
+            $('#answer2').val('');
+            $('#answer3').val('');
+            $('#answer4').val('');
+            $('#answer5').val('');
+            $('#answer6').val('');
+            $('#answer7').val('');
+            $('#answer8').val('');
+            $('#answer9').val('');
+            $('#answer10').val('');
+        });
+    });
+
+</script>

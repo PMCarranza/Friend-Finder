@@ -55,7 +55,7 @@ module.exports = function(app){
         console.log('=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*');
 
         // for loop to iterate through friends
-        for (var i = 0, i<friendList.length; i++){
+        for (var i = 0; i<friendList.length; i++){
             console.log('this is at i --> ' + friendTable[i].name);
             // variable difference gets assigned to zero every time loop iterates
             difference = 0;
@@ -68,10 +68,10 @@ module.exports = function(app){
             console.log('this is the difference between matches --> ' + matchDifference);
 
             if (matchDifference <= matchIt.friendDifference) {
-                matchIt.name = friendList.[i].name;
-                matchIt.photo = friendList.[i].photo;
+                matchIt.name = friendList[i].name;
+                matchIt.photo = friendList[i].photo;
                 matchIt.friendDifference = matchDifference;
-            }
+            };
             console.log('match difference --> ' + matchDifference);
         }
 

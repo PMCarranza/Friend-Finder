@@ -15,7 +15,7 @@ module.exports = function (app) {
         console.log('htmlRoutes survey path-- > ' + __dirname);
     });
     app.get('/home', function (req, res) {
-        res.senFile(path.join(__dirname, '../public/home.html'));
+        res.sendFile(path.join(__dirname, '../public/home.html'));
         console.log('htmlRoutes html path-- > ' + __dirname);
 
     });
