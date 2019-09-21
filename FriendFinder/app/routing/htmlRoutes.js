@@ -1,6 +1,8 @@
 // dependencies
 // path package is needed to get the correct file path for the html
 
+console.log('htmlRoutes present!');
+
 var path = require('path');
 
 // routing

@@ -2,6 +2,8 @@
 // this is the list of 'frinds', I have decided to use greek mythology instead.
 // in this case I am hard coding them
 
+console.log('friends present!');
+
 var friendList = [
     {
         name: 'Zeus',

@@ -1,6 +1,7 @@
 // loading data
 // linking the routes to the data source, in this case friends.js
 // using require to import the data
+console.log('apiRoutes present!');
 
 var friendTable = require('../data/friends');
 
