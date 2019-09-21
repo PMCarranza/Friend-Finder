@@ -3,24 +3,24 @@
 // using require to import the data
 console.log('apiRoutes present!');
 
-var friendTable = require('../data/friends.js');
+var friendList = require('../data/friends.js');
 
 // routing
 
 module.exports = function(app){
     // API gets request
-    // in each case below when a user visits a link the code shows JSON of the data in friendTable
+    // in each case below when a user visits a link the code shows JSON of the data in friendList
 
     app.get('/api/friends', function (req, res) {
-        res.json(friendTable);
-        console.log('apiRoutesjs list--> ' + friendTable);
+        res.json(friendList);
+        console.log('apiRoutesjs list--> ' + friendList);
         console.log('apiRoutesjs res--> ' + res);
         console.table(res);
     });
 
     // app.get('/api/survey', function (req, res) {
-    //     res.json(friendTable);
-    //     console.log('apiRoutesjs list--> ' + friendTable);
+    //     res.json(friendList);
+    //     console.log('apiRoutesjs list--> ' + friendList);
     //     console.log('apiRoutesjs res--> ' + res);
     //     console.table(res);
     // });
@@ -34,8 +34,21 @@ module.exports = function(app){
             photo: '',
             friendDifference: 1000
         };
+        console.log(req.body);
+
+        // The map() method creates a new array with the results of calling a function for every array element.
+        // The map() method calls the provided function once for each element in an array, in order.
+        var answers = req.body.answers.map(function (item) {
+            return parseInt(item, 10);
+        });
+
+        var userData = {
+            name: req.body.userName,
+            photo: req.body.userPhoto,
+            score: answers
+        };
         // var userData = JSON.stringify(req.body); 
-        var userData = req.body;
+        // var userData = req.body;
         var userName = userData.name;
         var userPhoto = userData.photo;
         var userScore = userData.score;
@@ -44,20 +57,11 @@ module.exports = function(app){
         console.log('apiRoutes userPhoto--> ' + userPhoto);
         console.log('apiRoutes userScore--> ' + userScore);
 
-        // The map() method creates a new array with the results of calling a function for every array element.
-        // The map() method calls the provided function once for each element in an array, in order.
-        var answers = userScore.map(function (item) {
-            return parseInt(item, 10);
-        });
-        userData = {
-            name: req.body.name,
-            photo: req.body.photo,
-            score: answers
-        };
+
         console.log('name: ' + userName);
         console.log('score: ' + userScore);
 
-        var sum = score.reduce((a, b) => a + b, 0);
+        var sum = userScore.reduce((a, b) => a + b, 0);
         console.log('=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*');
         console.log('Sum of user score ' + sum);
         console.log('match difference -> ' + matchIt.difference);
@@ -65,7 +69,7 @@ module.exports = function(app){
 
         // for loop to iterate through friends
         for (var i = 0; i<friendList.length; i++){
-            console.log('this is at i --> ' + friendTable[i].name);
+            console.log('this is at i --> ' + friendList[i].name);
             // variable difference gets assigned to zero every time loop iterates
             difference = 0;
             console.log('difference --> ' + difference);
@@ -73,6 +77,7 @@ module.exports = function(app){
 
             var bestMatch = friendList[i].score.reduce((a, b) => a + b, 0);
             console.log('Total score of matched friend --> ' + bestMatch);
+            var matchDifference = 0;
             matchDifference += Math.abs(sum - bestMatch);
             console.log('this is the difference between matches --> ' + matchDifference);
 
@@ -90,6 +95,6 @@ module.exports = function(app){
         console.log(userData);
         res.json(matchIt);
         console.log('<---- User added ---- >');
-
+        console.table(friendList);
     });
 };
