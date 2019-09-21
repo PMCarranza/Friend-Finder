@@ -4,11 +4,26 @@ body{
     padding:2em;
 }
 
-h1{
+h1.display-3{
     text-align: center;
+    font-weight: bolder;
+    color:darkblue;
+}
+
+p.lead{
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    margin:1em;
 }
 
 p{
     text-align: center;
-    margin:1em;
+    font-size: 1.5em;
+}
+
+footer.footer div.container a{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
 }

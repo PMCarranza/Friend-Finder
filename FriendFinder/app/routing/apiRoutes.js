@@ -3,7 +3,7 @@
 // using require to import the data
 console.log('apiRoutes present!');
 
-var friendTable = require('../data/friends');
+var friendTable = require('../data/friends.js');
 
 // routing
 
@@ -18,12 +18,12 @@ module.exports = function(app){
         console.table(res);
     });
 
-    app.get('/api/survey', function (req, res) {
-        res.json(friendTable);
-        console.log('apiRoutesjs list--> ' + friendTable);
-        console.log('apiRoutesjs res--> ' + res);
-        console.table(res);
-    });
+    // app.get('/api/survey', function (req, res) {
+    //     res.json(friendTable);
+    //     console.log('apiRoutesjs list--> ' + friendTable);
+    //     console.log('apiRoutesjs res--> ' + res);
+    //     console.table(res);
+    // });
     
     app.post('/api/friends', function (req, res) {
         // the code to make the match goes here
@@ -34,10 +34,18 @@ module.exports = function(app){
             photo: '',
             friendDifference: 1000
         };
+        // var userData = JSON.stringify(req.body); 
         var userData = req.body;
         var userName = userData.name;
+        var userPhoto = userData.photo;
         var userScore = userData.score;
+        console.log('apiRoutes userData--> ' + JSON.stringify(userData));
+        console.log('apiRoutes userName--> ' + userName   );
+        console.log('apiRoutes userPhoto--> ' + userPhoto);
+        console.log('apiRoutes userScore--> ' + userScore);
 
+        // The map() method creates a new array with the results of calling a function for every array element.
+        // The map() method calls the provided function once for each element in an array, in order.
         var answers = userScore.map(function (item) {
             return parseInt(item, 10);
         });
