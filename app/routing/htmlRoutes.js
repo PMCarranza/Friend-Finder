@@ -1,7 +1,7 @@
 // dependencies
 // path package is needed to get the correct file path for the html
 
-console.log('htmlRoutes present!');
+// console.log('htmlRoutes present!');
 
 var path = require('path');
 
@@ -21,10 +21,10 @@ module.exports = function (app) {
         // console.log('htmlRoutes html path-- > ' + __dirname);
 
     });
-    
+
     // if no matching route is found default to home
     app.use('*', function (req, res) {
         res.sendFile(path.join(__dirname, '../public/home.html'));
- 
+
     });
 };

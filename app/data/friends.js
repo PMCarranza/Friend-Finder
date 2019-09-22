@@ -2,7 +2,7 @@
 // this is the list of 'frinds', I have decided to use greek mythology instead.
 // in this case I am hard coding them
 
-console.log('friends present!');
+// console.log('friends present!');
 
 var friendList = [
     {
@@ -28,7 +28,7 @@ var friendList = [
     },
     {
         name: 'Hestia',
-        photo: 'https://images.app.goo.gl/159rckoatdLEhmPF7',
+        photo: 'images/hestia.jpeg',
         score: [3, 2, 4, 5, 4, 3, 3, 1, 2, 3]
     },
     {

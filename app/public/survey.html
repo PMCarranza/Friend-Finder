@@ -149,6 +149,26 @@
         <a href="/home">HOME</a>
     </div>
 </footer>
+
+<div id="resultsModal" class="modal fade" role="dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 class="modal-title">You are better paired with</h2>
+        </div>
+
+        <div class="modal-body">
+            <h2 id="matched-name"></h2>
+            <img id="matched-photo"src="https://via.placeholder.com/250x250" alt="Just in case user does not have an image">
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class ="btn btn-default" data-dismiss="modal">
+                Close
+            </button>
+        </div>
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- <script src= "https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -181,41 +201,18 @@
             $('#answer10').val()
             ]
         };
-        console.log('survey participant from survey.html');
-        console.table(participant);
+        // console.log('survey participant from survey.html');
+        // console.table(participant);
 
-    //     $.ajax({
-    //         url: '/api/friends',
-    //         type:'POST', 
-    //         // data: JSON.stringify(participant)
-    //         data: participant
-    //     }).then(function(data){
-    //         if (data){
-    //             alert('We are looking for a match!');
-    //         }else{
-    //             alert('Hmm . . . Tricky customer!');
-    //         };
-    //         $('#user-name').val('');
-    //         $('#user-photo').val('');
-    //         $('#answer1').val('');
-    //         $('#answer2').val('');
-    //         $('#answer3').val('');
-    //         $('#answer4').val('');
-    //         $('#answer5').val('');
-    //         $('#answer6').val('');
-    //         $('#answer7').val('');
-    //         $('#answer8').val('');
-    //         $('#answer9').val('');
-    //         $('#answer10').val('');
-    //     });
+$.post('api/friends', participant, function(data){
 
-    $.post('api/friends', participant, function(data){
+    $('#matched-name').text(data.name);
+    console.log('Survey.html matched-name is: ' + data.name);
+    $('#matched-photo').attr('src', data.photo);
+    console.log('Survey.html matched-photo is: ' + data.photo);
 
-        if (data){
-            alert('Bravo!');
-        }else{
-            alert('Boooooo');
-        }
+    $('#resultsModal').modal('toggle');
+
         $('#user-name').val('');
             $('#user-photo').val('');
             $('#answer1').val('');

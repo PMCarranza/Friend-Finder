@@ -1,7 +1,7 @@
 // loading data
 // linking the routes to the data source, in this case friends.js
 // using require to import the data
-console.log('apiRoutes present!');
+// console.log('apiRoutes present!');
 
 var friendList = require('../data/friends.js');
 
@@ -18,12 +18,6 @@ module.exports = function(app){
         console.table(res);
     });
 
-    // app.get('/api/survey', function (req, res) {
-    //     res.json(friendList);
-    //     console.log('apiRoutesjs list--> ' + friendList);
-    //     console.log('apiRoutesjs res--> ' + res);
-    //     console.table(res);
-    // });
     
     app.post('/api/friends', function (req, res) {
         // the code to make the match goes here
@@ -34,7 +28,7 @@ module.exports = function(app){
             photo: '',
             friendDifference: 1000
         };
-        console.log(req.body);
+        // console.log(req.body);
 
         // The map() method creates a new array with the results of calling a function for every array element.
         // The map() method calls the provided function once for each element in an array, in order.
@@ -62,38 +56,42 @@ module.exports = function(app){
         console.log('score: ' + userScore);
 
         var sum = userScore.reduce((a, b) => a + b, 0);
-        console.log('=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*');
-        console.log('Sum of user score ' + sum);
-        console.log('match difference -> ' + matchIt.difference);
-        console.log('=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*');
+        // console.log('=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*');
+        // console.log('Sum of user score ' + sum);
+        // console.log('match difference -> ' + matchIt.difference);
+        // console.log('=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*');
 
         // for loop to iterate through friends
         for (var i = 0; i<friendList.length; i++){
-            console.log('this is at i --> ' + friendList[i].name);
+            // console.log('this is at i --> ' + friendList[i].name);
             // variable difference gets assigned to zero every time loop iterates
             difference = 0;
-            console.log('difference --> ' + difference);
-            console.log('best match --> ' + matchIt.friendDifference);
+            // console.log('difference --> ' + difference);
+            // console.log('best match --> ' + matchIt.friendDifference);
 
             var bestMatch = friendList[i].score.reduce((a, b) => a + b, 0);
-            console.log('Total score of matched friend --> ' + bestMatch);
+            // console.log('apiRoutes Total score of matched friend --> ' + bestMatch);
             var matchDifference = 0;
             matchDifference += Math.abs(sum - bestMatch);
-            console.log('this is the difference between matches --> ' + matchDifference);
+            // console.log('apiRoutes this is the difference between matches --> ' + matchDifference);
 
             if (matchDifference <= matchIt.friendDifference) {
                 matchIt.name = friendList[i].name;
                 matchIt.photo = friendList[i].photo;
                 matchIt.friendDifference = matchDifference;
             };
-            console.log('match difference --> ' + matchDifference);
+            // console.log('match difference --> ' + matchDifference);
+            // console.log('best match is --> ' + bestMatch);
         }
 
-        console.log('match --> ' + matchIt);
         friendList.push(userData);
         console.log('<---- adding user ---- >');
         console.log(userData);
         res.json(matchIt);
+        console.log('apiRoutes matchIt --> ' + matchIt.name);
+        console.log('apiRoutes matchIt --> ' + matchIt.photo);
+
+
         console.log('<---- User added ---- >');
         console.table(friendList);
     });
