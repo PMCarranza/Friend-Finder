@@ -17,8 +17,8 @@ module.exports = function(app){
         console.log('apiRoutesjs res--> ' + res);
         console.table(res);
     });
-
     
+    // req comes from me   res comes back from the server
     app.post('/api/friends', function (req, res) {
         // the code to make the match goes here
         // the user input needs to get collected and compared to the table of friends and then the match should be displayed

@@ -19,7 +19,7 @@ module.exports = function (app) {
     app.use('/home', function (req, res) {
         res.sendFile(path.join(__dirname, '../public/home.html'));
         // console.log('htmlRoutes html path-- > ' + __dirname);
-
+        console.log('htmlRoutes--> ' + res);
     });
 
     // if no matching route is found default to home

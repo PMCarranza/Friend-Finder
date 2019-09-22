@@ -7,54 +7,54 @@
 var friendList = [
     {
         name: 'Zeus',
-        photo: 'https://images.app.goo.gl/zKX3n2LauZMf1X9o8',
+        photo: 'images/zeus.jpeg',
         score: [5, 5, 1, 1, 1, 3, 4, 5, 4, 1]
         
     },
     {
         name: 'Poseidon',
-        photo: 'https://images.app.goo.gl/zzDrNj7ZUU2Q5PZ49',
-        score: [4, 4, 3, 1, 3, 3, 1, 4, 3, 3]
+        photo: 'images/poseidon.jpeg',
+        score: [4, 4, 3, 1, 3, 4, 1, 4, 3, 4]
     }, 
     {
         name: 'Hades',
-        photo: 'https://images.app.goo.gl/hDax8JtAP4ubtYZP9',
-        score: [5, 1, 3, 4, 2, 1, 3, 1, 4, 3]
+        photo: 'images/hades.jpeg',
+        score: [5, 1, 2, 5, 2, 1, 4, 1, 4, 4]
     },
     {
         name: 'Hera',
-        photo: 'https://images.app.goo.gl/9x3D2Sxk4Hpo6iT3A',
-        score: [5, 4, 4, 4, 3, 3, 3, 3, 5, 3]
+        photo: 'images/hera.jpeg',
+        score: [5, 5, 4, 4, 2, 4, 4, 3, 5, 4]
     },
     {
         name: 'Hestia',
         photo: 'images/hestia.jpeg',
-        score: [3, 2, 4, 5, 4, 3, 3, 1, 2, 3]
+        score: [2, 3, 4, 5, 3, 4, 2, 1, 2, 4]
     },
     {
         name: 'Athena',
-        photo: 'https://images.app.goo.gl/YVBz2kA9J3wDUSfd6',
-        score: [4, 1, 4, 2, 2, 3, 3, 3, 2, 5]
+        photo: 'images/athena.jpeg',
+        score: [4, 1, 5, 2, 2, 3, 2, 3, 2, 5]
     },
     {
         name: 'Artemis',
-        photo: 'https://images.app.goo.gl/YvPU3mwUThPmCnX79',
-        score: [5, 1, 4, 4, 3, 4, 2, 5, 4, 3]
+        photo: 'images/artemis.jpeg',
+        score: [5, 1, 4, 2, 2, 4, 2, 5, 4, 4]
     },
     {
         name: 'Apollo',
-        photo: 'https://images.app.goo.gl/ffUYm134B9GfxKDY8',
+        photo: 'images/apollo.jpeg',
         score: [3, 5, 2, 1, 2, 4, 2, 5, 4, 3]
     },
     {
         name: 'Hermes',
-        photo: 'https://images.app.goo.gl/geHvyCPpzUX3hrcP8',
-        score: [3, 3, 5, 1, 4, 3, 2, 5, 2, 5]
+        photo: 'images/hermes.jpeg',
+        score: [3, 4, 5, 1, 4, 3, 1, 5, 2, 5]
     },
     {
         name: 'Persephone',
-        photo: 'https://images.app.goo.gl/Lr5o41EDXfPHkyLN6',
-        score: [3, 4, 3, 3, 3, 3, 4, 3, 4, 2]
+        photo: 'images/persephone.jpeg',
+        score: [3, 5, 3, 3, 3, 3, 4, 3, 4, 2]
     },
 ];
 
