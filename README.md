@@ -25,3 +25,18 @@ I put together this app following instructional direction, research, code review
 ### **here is a quick demonstration**
 
 <img src="app/public/images/friend-finder.gif">
+
+## **Installation**
+npm packages needed to install and run this app:
+•  express
+•  path
+
+## **Roadmap**
+The next play will be to add an option for the user to add an image of their choice, modify the ui so it is easy on the eyes and after this has been acomplished I think I will look into saving the answers to create a larger pool of participants.
+
+## **Contributing**
+I am the only one maintaining this app, and it is not of high priority at the moment.
+
+## **Acknowledgments**
+I have created this app following class exercises and research of my own, I have added notes to help my understanding.
+I would like to thank Catherine Pham, Ben Vaagen and Arron Linton for the tireless support in the process.
