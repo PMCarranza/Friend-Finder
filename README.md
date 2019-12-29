@@ -1,6 +1,6 @@
 # **Friend-Finder Web Application**
 
-This is a full-stack app, takes the answers to the questions presented to the user, then compares those answers to the values assigned to the "contestants". The app will then display the name and picture of the "contestant" with the best overall match to the user's answers.
+This is full-stack app takes the answers to the questions presented to the user, then compares those answers to the values assigned to the "contestants". The app will then display the name and picture of the "contestant" with the best overall match to the user's answers.
 In this control enviroment case, the app will match the user with a greek god.
 In the future this app could help users connect with others who share their same interests and passions.
 
