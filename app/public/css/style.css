@@ -11,27 +11,33 @@ body{
 }
 
 h1.display-3{
+    font-size: 6vw;
     text-align: center;;
     font-weight: bolder;
     color:darkblue;
     text-shadow: 15px 15px 25px whitesmoke;
+    margin-bottom: 2vw;
 }
 
 p.lead{
     text-align: center;
-    font-size: 2em;
+    font-size: 3vw;
     font-weight: bold;
     color:whitesmoke;
     text-shadow: 10px 10px 20px black;
-    margin: 2em 0 6em 0;
+    margin-bottom: 2vw;
 }
 
 p{
     text-align: center;
-    font-size: 1.5em;
+    font-size: 2vw;
     font-weight: bold;
     color:whitesmoke;
     text-shadow: 10px 10px 20px black;
+}
+
+a.btn.btn{
+    margin-bottom: 10vw;
 }
 
 #foot{
