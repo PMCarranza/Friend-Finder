@@ -1,72 +1,75 @@
 body{
     max-width: 90%;
-    margin: 1em;
-    background-color: rgba(104, 183, 248, 0.25);
+    margin: 5vw;
+    background-color: rgba(150, 185, 212, 0.5);
     font-family: Arial, Helvetica, sans-serif;
-    padding:3em;
-    font-size: 18px;
+    font-size: 2vw;
 }
 
 h1{
     text-align: center;
     font-weight: bolder;
-    font-size: 3em;
+    font-size: 4vw;
     color:darkblue;
-    margin-bottom: 1em;
+    margin-bottom: 2vw;
 }
 h2{
     font-weight: bold;
-    font-size: 2em;
-    margin-bottom: 1em;    
+    font-size: 3vw;
+    margin-bottom: 1vw;    
 }
 
 h6{
-    margin-bottom: .5em;
+    font-size: 2vw;
+    margin-bottom: 1vw;
 }
 
 input#user-name.form-control{
     width: 50%;
-    margin-bottom: 2em;
+    margin-bottom: 3vw;
 }
 
-input#user-photo.form-control{
+/* input#user-photo.form-control{
     width: 75%;
-    margin-bottom: 2em;
-}
+    margin-bottom: 2vw;
+} */
 
 p{
-    font-size: 1.5em;
+    font-size: 2vw;
+    font-weight: bold;
     text-align: center;
-    margin:1em;
-    color:darkblue;
+    margin:1vw;
+    color:grey;
+    margin-bottom: 3vw;
 }
 
 h3{
     font-weight: bold;
-    font-size:1em;
+    font-size:2vw;
     color: darkblue;
 }
 
 h5{
     font-weight: bold;
-    font-size: 1.5em;
-    margin-bottom: .5em;
+    font-size: 3vw;
+    margin-bottom: 1vw;
 }
 
 form div.form-group select.form-control{
+    font-size: 1.5vw;
     width: 25%;
-    margin-bottom: 1em;
+    margin-bottom: 1vw;
 }
 
 button{
     width: 25%;
-    margin-bottom: 2em;
+    margin-bottom: 2vw;
 }
 
 footer.footer div.container a{
 
     display: flex;
     justify-content: center;
-    font-size: 1em;
+    font-size: 2vw;
     font-weight: bold;
 }
